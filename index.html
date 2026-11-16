@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV of Adriann Dave G. Alipar, Full-Stack Engineer.">
+  <title>Adriann Dave G. Alipar — CV</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17212b;
+      --muted: #526170;
+      --accent: #087e8b;
+      --accent-dark: #075d68;
+      --accent-soft: #e8f5f5;
+      --line: #dce5e9;
+      --surface: #fff;
+      --page: #f4f7f8;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent-dark); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 2;
+      padding: .6rem .9rem;
+      background: var(--surface);
+      border-radius: .5rem;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .hero {
+      padding: clamp(3rem, 8vw, 6rem) 1.25rem 3rem;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .hero-inner, main, .site-nav-inner {
+      width: min(100% - 2.5rem, 880px);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 .4rem;
+      color: #9bd9dc;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+
+    .hero-title {
+      max-width: 42rem;
+      margin: 1rem 0 1.4rem;
+      color: #d8e5e9;
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      font-weight: 600;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem 1rem;
+      color: #d8e5e9;
+      font-size: .95rem;
+    }
+
+    .contact-row a { color: #a9e3e5; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      border-bottom: 1px solid var(--line);
+      background: rgb(255 255 255 / 96%);
+      backdrop-filter: blur(10px);
+    }
+
+    .site-nav-inner {
+      display: flex;
+      gap: .25rem;
+      overflow-x: auto;
+      padding-block: .6rem;
+      scrollbar-width: thin;
+    }
+
+    .site-nav a {
+      flex: 0 0 auto;
+      padding: .45rem .7rem;
+      border-radius: .45rem;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover, .site-nav a:focus-visible {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+    }
+
+    main { padding-block: 1.25rem 4rem; }
+
+    .section {
+      margin-block: 1.25rem;
+      padding: clamp(1.25rem, 4vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--surface);
+      box-shadow: 0 8px 26px rgb(23 33 43 / 4%);
+      scroll-margin-top: 5rem;
+    }
+
+    h2 {
+      margin: 0 0 1.2rem;
+      font-size: 1.35rem;
+      letter-spacing: -.02em;
+    }
+
+    h2::after {
+      display: block;
+      width: 2.6rem;
+      height: 3px;
+      margin-top: .55rem;
+      border-radius: 2px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .summary { max-width: 68ch; margin: 0; color: var(--muted); }
+
+    .competencies, .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .competencies li {
+      padding: .4rem .7rem;
+      border: 1px solid #cfe7e8;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .job {
+      padding-block: 1.2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .job:first-of-type { padding-top: 0; border-top: 0; }
+
+    .job-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .2rem 1rem;
+    }
+
+    .job > .job-heading {
+      align-items: center;
+      justify-content: flex-start;
+      gap: .8rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .job > .job-heading::-webkit-details-marker { display: none; }
+
+    .job > .job-heading::before {
+      width: .65rem;
+      height: .65rem;
+      flex: 0 0 .65rem;
+      border-right: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      content: "";
+      transform: rotate(-45deg);
+      transition: transform 160ms ease;
+    }
+
+    .job[open] > .job-heading::before { transform: rotate(45deg); }
+    .job > .job-heading:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .job-company { color: var(--ink); font-size: 1.45rem; font-weight: 750; letter-spacing: -.02em; }
+    .job-period, .job-location { color: var(--muted); font-size: .9rem; }
+    .job-role { margin: .1rem 0; color: var(--accent-dark); font-weight: 650; }
+    .job ul { margin: .65rem 0 0; padding-left: 1.25rem; }
+    .job li + li { margin-top: .45rem; }
+
+    .project {
+      padding-block: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .job > .project:first-of-type { border-top: 0; }
+
+    .project-heading {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .2rem 1rem;
+    }
+
+    .project-title { margin: 0; font-size: 1rem; }
+    .project-period, .project-duration { color: var(--muted); font-size: .88rem; }
+    .project p { margin: .35rem 0 0; color: var(--muted); }
+    .project strong { color: var(--ink); }
+
+    .education {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: .25rem 1rem;
+    }
+
+    .education-title { font-weight: 700; }
+    .education-org, .education-year { color: var(--muted); }
+    .skill-item { flex: 1 1 19rem; color: var(--muted); }
+    .skill-category { color: var(--ink); font-weight: 700; }
+
+    footer {
+      padding: 0 1rem 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 560px) {
+      .hero-inner, main, .site-nav-inner { width: min(100% - 1.5rem, 880px); }
+      .hero { padding-inline: .75rem; }
+      .site-nav-inner { gap: 0; }
+      .site-nav a { padding-inline: .55rem; font-size: .85rem; }
+      .job-heading { display: block; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .job > .job-heading::before { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Curriculum Vitae</p>
+      <h1>Adriann Dave G. Alipar</h1>
+      <p class="hero-title">Full-Stack Engineer, TypeScript, React and PostgreSQL</p>
+      <div class="contact-row">
+        <a href="mailto:alipar.adriann@gmail.com">alipar.adriann@gmail.com</a>
+        <span>Cebu, Philippines</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="CV sections">
+    <div class="site-nav-inner">
+      <a href="#about">About</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">Professional Summary</h2>
+      <p class="summary">Full-stack software engineer with 5+ years in JavaScript and TypeScript (React, Remix, Next.js, Node.js), PostgreSQL and AWS. Led the full-stack design, implementation and feature delivery of a production mental health platform, and led backend work on a serverless reservation app. Works in cross-functional remote teams.</p>
+    </section>
+
+    <section class="section" id="competencies" aria-labelledby="competencies-title">
+      <h2 id="competencies-title">Core Competencies</h2>
+      <ul class="competencies">
+        <li>TypeScript &amp; React</li>
+        <li>Next.js &amp; Remix</li>
+        <li>Node.js &amp; REST APIs</li>
+        <li>PostgreSQL</li>
+        <li>AWS &amp; GCP</li>
+        <li>CI/CD with GitHub Actions</li>
+        <li>Remote Cross-Functional Teams</li>
+      </ul>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Work Experience</h2>
+      <details class="job">
+        <summary class="job-heading"><span class="job-company">CoDev</span></summary>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Mindbase</h3>
+            <span class="project-period">October 2022 - Present</span>
+          </div>
+          <p><strong>Role:</strong> Fullstack Developer</p>
+          <p><strong>Technologies used:</strong> AWS (S3, EC2, CodeDeploy, RDS - PostgreSQL), Remix, Typescript</p>
+          <p><strong>Description:</strong> Proactive mental health and wellness platform specifically designed for first responders and 9-1-1 dispatchers</p>
+          <p><strong>Task:</strong> Worked as the Lead developer (Fullstack) of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 36 months</p>
+        </article>
+      </details>
+
+      <details class="job">
+        <summary class="job-heading"><span class="job-company">Sprobe Inc.</span></summary>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">CyCal</h3>
+            <span class="project-period">April 2022 - Jul 31 2022</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Google Cloud Functions (Node.js), Next.js, Typescript</p>
+          <p><strong>Description:</strong> Web App for Salon Menu Management and Reservation</p>
+          <p><strong>Task:</strong> Worked as the Lead Backend Developer of this project and sometimes on the Frontend</p>
+          <p class="project-duration"><strong>Project duration:</strong> 4 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">VACAN Admin</h3>
+            <span class="project-period">November 2021 - April 2022</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Node.js, VueJS, Typescript</p>
+          <p><strong>Description:</strong> Web App for Toilet Maintenance, Group Management (Station, Sales Office, Division, User) and Reporting.</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer of this project and sometimes on the Frontend</p>
+          <p class="project-duration"><strong>Project duration:</strong> 5 months</p>
+        </article>
+      </details>
+
+      <details class="job">
+        <summary class="job-heading"><span class="job-company">ARK Creative Web Studio</span></summary>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Green Project</h3>
+            <span class="project-period">May 2021 - September 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Node.js, React, Typescript</p>
+          <p><strong>Description:</strong> Web App for Machine Maintenance and Customer Management.</p>
+          <p><strong>Task:</strong> Worked as the Lead Backend Developer of this project and sometimes on the Frontend</p>
+          <p class="project-duration"><strong>Project duration:</strong> 4 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Viridi Parente</h3>
+            <span class="project-period">April 2021 - July 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Node.js, React, Typescript</p>
+          <p><strong>Description:</strong> Web App for Machine Maintenance and Customer Management.</p>
+          <p><strong>Task:</strong> Worked as the Lead Backend Developer of this project and sometimes on the Frontend</p>
+          <p class="project-duration"><strong>Project duration:</strong> 3 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Favordrop</h3>
+            <span class="project-period">March 2021 - August 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Node.js, React, MongoDB, AWS (Docker, EB)</p>
+          <p><strong>Description:</strong> Gift cards system</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer of this project and sometimes on the Frontend</p>
+          <p class="project-duration"><strong>Project duration:</strong> 5 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Inventory</h3>
+            <span class="project-period">May 2020 - February 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Node.js, React, MongoDB, AWS (Docker, EB)</p>
+          <p><strong>Description:</strong> Inventory System (Sales Order, Purchase Order)</p>
+          <p><strong>Task:</strong> Worked as the Lead Backend Developer of this project and also on the Frontend</p>
+          <p class="project-duration"><strong>Project duration:</strong> 9 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Harbinger School</h3>
+            <span class="project-period">January 2021 - May 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Node.js, React, MongoDB, AWS (Docker, EB)</p>
+          <p><strong>Description:</strong> School Portal for Software Engineering</p>
+          <p><strong>Task:</strong> Worked as the Lead Backend Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 4 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">RPI Cash Advance</h3>
+            <span class="project-period">May 2019 - March 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer, DevOps (handled the server)</p>
+          <p><strong>Technologies used:</strong> Laravel, Angular, MySQL</p>
+          <p><strong>Description:</strong> RPI Cash Advance (Cash Advance Internal System)</p>
+          <p><strong>Task:</strong> Worked as the Lead Backend Developer, DevOps (handled the server) of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 18 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">RPI Vendor Portal</h3>
+            <span class="project-period">February 2019 - November 2019</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Laravel, Angular, MySQL</p>
+          <p><strong>Description:</strong> RPI Vendor Portal (SKU and Purchase Order viewing)</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 4 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Dental Pro</h3>
+            <span class="project-period">May 2019 - February 2021</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer, DevOps (handled the server)</p>
+          <p><strong>Technologies used:</strong> Laravel, Angular, MySQL, AWS (EC2, RDS)</p>
+          <p><strong>Description:</strong> Dental Pro (Dental Management)</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer, DevOps (handled the server) of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 18 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">CPN</h3>
+            <span class="project-period">July 2018 - September 2018</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Zend Framework, jQuery, MySQL</p>
+          <p><strong>Description:</strong> CPN - Cryptocurrency mining site</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 2 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Envogue</h3>
+            <span class="project-period">July 2018 - January 2019</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Laravel, jQuery, MySQL</p>
+          <p><strong>Description:</strong> Envogue - Online Dress Rental</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 6 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">RD Pawnshop Services</h3>
+            <span class="project-period">September 2017 - September 2018</span>
+          </div>
+          <p><strong>Role:</strong> Developer, DevOps (handled the server)</p>
+          <p><strong>Technologies used:</strong> Laravel, jQuery, MySQL</p>
+          <p><strong>Description:</strong> RD Pawnshop Services</p>
+          <p><strong>Task:</strong> Worked as the Developer, DevOps (handled the server) of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 12 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Cater Spice</h3>
+            <span class="project-period">January 2017 - September 2017</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Laravel, jQuery, MySQL</p>
+          <p><strong>Description:</strong> Catering Ordering Online</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 8 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Fight Call Out</h3>
+            <span class="project-period">March 2017 - May 2017</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Laravel, jQuery, MySQL</p>
+          <p><strong>Description:</strong> Website for fighters, promoters and fight fans</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 2 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Pirate Talk</h3>
+            <span class="project-period">January 2017 - March 2017</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Lumen, MySQL</p>
+          <p><strong>Description:</strong> Pirate Translator</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 2 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Bakery</h3>
+            <span class="project-period">October 2016 - December 2016</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Laravel, jQuery, MySQL</p>
+          <p><strong>Description:</strong> Management site</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 3 months</p>
+        </article>
+      </details>
+
+      <details class="job">
+        <summary class="job-heading"><span class="job-company">Nerubia, Inc.</span></summary>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">MatchMove AD</h3>
+            <span class="project-period">July 2016 - October 2016</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Kohana PHP, jQuery, MySQL</p>
+          <p><strong>Description:</strong> AdminNet (MatchMove)</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 3 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">MatchMove IH</h3>
+            <span class="project-period">July 2016 - October 2016</span>
+          </div>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p><strong>Technologies used:</strong> Falcon PHP, MySQL</p>
+          <p><strong>Description:</strong> Iron Hide API (MatchMove)</p>
+          <p><strong>Task:</strong> Worked as the Backend Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 3 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Constructions Trade Daily</h3>
+            <span class="project-period">June 2016 - July 2016</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> WordPress PHP, CSS, jQuery, MySQL</p>
+          <p><strong>Description:</strong> Website for Constructions Trading</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project</p>
+          <p class="project-duration"><strong>Project duration:</strong> 1 month</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Aboitiz eDoc</h3>
+            <span class="project-period">February 2016 - July 2016</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Zend PHP, jQuery, MySQL, HTML</p>
+          <p><strong>Description:</strong> Electronic Document</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 5 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Aboitiz Corrective / Preventive Action Request</h3>
+            <span class="project-period">March 2016 - July 2016</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> CodeIgniter PHP, jQuery, MySQL</p>
+          <p><strong>Description:</strong> Internal Business Process</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 4 months</p>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <h3 class="project-title">Aboitiz RMD</h3>
+            <span class="project-period">November 2015 - July 2016</span>
+          </div>
+          <p><strong>Role:</strong> Developer</p>
+          <p><strong>Technologies used:</strong> Zend PHP, jQuery, MySQL, HTML</p>
+          <p><strong>Description:</strong> Records Management Database</p>
+          <p><strong>Task:</strong> Worked as the Developer of this project and also on maintenance</p>
+          <p class="project-duration"><strong>Project duration:</strong> 7 months</p>
+        </article>
+      </details>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <div class="education">
+        <div>
+          <div class="education-title">Bachelor of Science in Information Technology</div>
+          <div class="education-org">University of San Jose - Recoletos</div>
+        </div>
+        <div class="education-year">2011-2015</div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <ul class="skills">
+        <li class="skill-item"><span class="skill-category">Programming Languages: </span>JavaScript, TypeScript, Python, PHP</li>
+        <li class="skill-item"><span class="skill-category">Frontend Technologies: </span>React, HTML5, CSS3, Tailwind CSS</li>
+        <li class="skill-item"><span class="skill-category">Backend Technologies: </span>Node.js, Laravel, Express.js</li>
+        <li class="skill-item"><span class="skill-category">Data/BI: </span>PostgreSQL, MySQL, MongoDB</li>
+        <li class="skill-item"><span class="skill-category">Cloud Platforms: </span>AWS, Google Cloud Platform</li>
+        <li class="skill-item"><span class="skill-category">DevOps &amp; CI/CD: </span>Docker, GitHub Actions, Azure DevOps</li>
+        <li class="skill-item"><span class="skill-category">Architecture &amp; Integration: </span>REST APIs, Microservices, Event-Driven Architecture</li>
+        <li class="skill-item"><span class="skill-category">Tools &amp; Platforms: </span>Git, GitHub, Jira, Azure DevOps, Postman, Figma</li>
+        <li class="skill-item"><span class="skill-category">Methodologies: </span>Agile, Scrum, Kanban, Waterfall, TDD</li>
+      </ul>
+    </section>
+  </main>
+  <footer>Adriann Dave G. Alipar</footer>
+</body>
+</html>
